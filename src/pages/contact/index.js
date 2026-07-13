@@ -33,7 +33,7 @@ export const ContactUs = () => {
         contactConfig.YOUR_SERVICE_ID,
         contactConfig.YOUR_TEMPLATE_ID,
         templateParams,
-        contactConfig.YOUR_USER_ID
+        contactConfig.YOUR_USER_ID,
       )
       .then(
         (result) => {
@@ -53,7 +53,7 @@ export const ContactUs = () => {
             show: true,
           });
           document.getElementsByClassName("co_alert")[0].scrollIntoView();
-        }
+        },
       );
   };
 
@@ -93,7 +93,6 @@ export const ContactUs = () => {
             </Alert>
           </Col>
           <Col lg="5" className="mb-5">
-            <h3 className="color_sec py-4">Get in touch</h3>
             <address>
               <strong>Email:</strong>{" "}
               <a href={`mailto:${contactConfig.YOUR_EMAIL}`}>
@@ -101,10 +100,15 @@ export const ContactUs = () => {
               </a>
               <br />
               <br />
-              {contactConfig.hasOwnProperty("YOUR_FONE") ? (
-                <p>
-                  <strong>Phone:</strong> {contactConfig.YOUR_FONE}
-                </p>
+              {contactConfig.hasOwnProperty("YOUR_PHONE") ? (
+                <>
+                  <p>
+                    <strong>Phone:</strong> {contactConfig.YOUR_PHONE}
+                  </p>
+                  <p>
+                    <strong>WhatsApp:</strong> {contactConfig.YOUR_PHONE}
+                  </p>
+                </>
               ) : (
                 ""
               )}

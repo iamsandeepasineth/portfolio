@@ -23,11 +23,21 @@ section {
 .btn-portfolio a {
     color: #000;
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.btn-portfolio a:hover {
+    color: var(--accent-coral);
 }
 
 .btn-about a {
     color: var(--text-color);
     text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.btn-about a:hover {
+    color: var(--accent-violet);
 }
 
 .intro_sec {
@@ -78,6 +88,13 @@ section {
 
 .intro_sec .intro .feature .wrap-icon svg {
     color: #5cccc9;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* NEW: brighten the feature icon on hover instead of the flat teal always */
+.intro_sec .intro .feature:hover .wrap-icon svg {
+    color: var(--accent-sky);
+    transform: scale(1.08);
 }
 
 .intro_sec .text h1 {
@@ -91,11 +108,21 @@ section {
     font-weight: 700;
 }
 
+/* Consolidated single rule for .h_bg-image (previously split across two rules,
+   which caused a cascade conflict where a later saturate() rule silently
+   overrode the grayscale filter). Grayscale by default, full color on
+   hovering the image itself only. */
 .intro_sec .h_bg-image {
     background-size: cover;
     background-position: center;
     min-height: 700px;
     position: relative;
+    filter: grayscale(1);
+    transition: filter 0.6s ease;
+}
+
+.intro_sec .h_bg-image:hover {
+    filter: grayscale(0);
 }
 
 .ac_btn {
@@ -104,7 +131,7 @@ section {
     position: relative;
     border: var(--secondary-color) 2px solid;
     overflow: hidden;
-    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1);
+    transition: all 0.6s cubic-bezier(0.55, 0, 0.1, 1), color 0.3s ease, border-color 0.3s ease;
     cursor: pointer;
     border-radius: 0;
     margin-right: 20px;
@@ -114,8 +141,11 @@ section {
     text-decoration: none;
 }
 
+/* CHANGED: hover now shifts border + shadow into color instead of staying mono */
 .ac_btn:hover {
-    box-shadow: 8px 8px 0px var(--text-color), -8px -8px 0px var(--text-color);
+    color: var(--accent-coral);
+    border-color: var(--accent-coral);
+    box-shadow: 8px 8px 0px var(--accent-teal), -8px -8px 0px var(--accent-violet);
 }
 
 .ac_btn:hover .one {
@@ -168,10 +198,15 @@ section {
 #button_p {
     background: var(--secondary-color);
     color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+#button_p:hover {
+    color: var(--accent-coral);
 }
 
 #button_h:hover {
-    color: var(--primary-color)
+    color: var(--accent-teal);
 }
 
 .intro_sec .h_bg-image .block {
@@ -227,8 +262,4 @@ section {
     font-size: 14px;
     line-height: 1.3;
     color: var(--text-color)
-}
-
-.intro_sec .h_bg-image {
-    filter: saturate(0.5);
 }
