@@ -1,0 +1,53 @@
+.sec_sp {
+    margin-bottom: calc(3rem + 5.128vw)
+}
+
+.t_border {
+    border-color: var(--text-color) !important;
+}
+
+.section-title {
+    font-size: 45px;
+}
+
+.service__title {
+    padding: 8px 0;
+    border-bottom: solid 2px var(--secondary-color);
+    transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.service_:hover .service__title {
+    color: var(--accent-gold);
+    border-color: var(--accent-gold);
+}
+
+.service_desc {
+    color: var(--text-color);
+}
+
+/*! keyframes shared with About */
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+    }
+    to {
+        opacity: 1;
+        -webkit-transform: translateZ(0);
+        transform: translateZ(0);
+    }
+}

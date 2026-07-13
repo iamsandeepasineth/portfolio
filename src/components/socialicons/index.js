@@ -10,7 +10,8 @@ import {
   FaInstagram,
   FaSnapchatGhost,
   FaTiktok,
-  FaCircle
+  FaCircle,
+  FaWhatsapp,
 } from "react-icons/fa";
 import { socialprofils } from "../../content_option";
 
@@ -24,7 +25,8 @@ const ICON_MAPPING = {
   tiktok: FaTiktok,
   twitter: FaTwitter,
   twitch: FaTwitch,
-  youtube: FaYoutube
+  youtube: FaYoutube,
+  whatsapp: FaWhatsapp, // Placeholder for WhatsApp icon
 };
 
 export const Socialicons = (params) => {
@@ -35,14 +37,14 @@ export const Socialicons = (params) => {
           const IconComponent = ICON_MAPPING[platform] || ICON_MAPPING.default;
           return (
             <li key={platform}>
-              <a href={url}>
+              <a href={url} target="_blank" rel="noopener noreferrer">
                 <IconComponent />
               </a>
             </li>
           );
         })}
       </ul>
-      <p>Follow Me</p>
+      <p>Find me on</p>
     </div>
   );
 };
