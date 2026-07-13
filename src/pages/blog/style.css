@@ -1,0 +1,100 @@
+.blog-card-link {
+  text-decoration: none;
+  display: block;
+}
+
+.blog-card {
+  background: var(--card-bg, #fff);
+  border: 1px solid var(--card-border, rgba(0, 0, 0, 0.08));
+  overflow: hidden;
+  transition: all 0.4s ease-in;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CHANGED: colorful shadow instead of flat text-color shadow */
+.blog-card-link:hover .blog-card {
+  box-shadow: 8px 8px 0px var(--card-accent, var(--accent-pink));
+  transform: translate(-2px, -2px);
+}
+
+.blog-card-link:hover .blog-date {
+  color: var(--card-accent, var(--accent-gold));
+}
+
+.blog-card-link:hover .blog-title {
+  color: var(--card-accent, var(--accent-pink));
+}
+
+.blog-card-link:hover .blog-read-more {
+  color: var(--card-accent, var(--accent-teal));
+}
+
+.blog-card-image {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  filter: saturate(0.5);
+  transition: filter 0.3s ease;
+}
+
+/* NEW: image regains saturation on hover */
+.blog-card-link:hover .blog-card-image {
+  filter: saturate(1);
+}
+
+.blog-card-body {
+  padding: 20px;
+  padding-top: 0px;
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-date {
+  font-size: 12px;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.blog-card-link:hover .blog-date {
+  color: var(--accent-gold);
+}
+
+.blog-title {
+  font-family: Cinzel;
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--text-color);
+  margin-bottom: 12px;
+  transition: color 0.3s ease;
+}
+
+.blog-card-link:hover .blog-title {
+  color: var(--accent-pink);
+}
+
+.blog-excerpt {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--text-color);
+  opacity: 0.8;
+  flex: 1 0 auto;
+}
+
+.blog-read-more {
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-color);
+  margin-top: 15px;
+  transition: color 0.3s ease;
+}
+
+.blog-card-link:hover .blog-read-more {
+  color: var(--accent-teal);
+}

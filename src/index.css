@@ -6,6 +6,18 @@
     --text-color-2: #fff;
     --text-color-3: rgb(204, 0, 0);
     --overlay-color: rgb(12 12 12 / 63%);
+
+    /* NEW: hover accent palette (works on both dark and light bg) */
+    --accent-coral: #ff6b6b;
+    --accent-teal: #2dd4bf;
+    --accent-gold: #fbbf24;
+    --accent-violet: #a78bfa;
+    --accent-sky: #38bdf8;
+    --accent-pink: #f472b6;
+
+    --card-bg: #161616;
+    --card-text: #e6e6e6;
+    --card-border: rgba(255, 255, 255, 0.1);
 }
 
 [data-theme="light"] {
@@ -16,6 +28,18 @@
     --text-color-2: #000;
     --text-color-3: rgb(204, 0, 0);
     --overlay-color: rgb(255 255 255 / 70%);
+
+    /* same accents — vivid enough to read on white too */
+    --accent-coral: #ff6b6b;
+    --accent-teal: #14b8a6;
+    --accent-gold: #f59e0b;
+    --accent-violet: #8b5cf6;
+    --accent-sky: #0ea5e9;
+    --accent-pink: #ec4899;
+
+    --card-bg: #ffffff;
+    --card-text: #1a1a1a;
+    --card-border: rgba(0, 0, 0, 0.08);
 }
 
 html,
@@ -51,9 +75,14 @@ h6 {
     font-family: Marcellus;
 }
 
-a,
-a:hover {
+/* CHANGED: split so hover can differ from the idle color */
+a {
     color: var(--text-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--accent-teal);
 }
 
 p {
@@ -65,9 +94,13 @@ p {
     overflow: hidden;
 }
 
-.text_2,
-.text_2:hover {
+.text_2 {
     color: var(--text-color-2);
+    transition: color 0.3s ease;
+}
+
+.text_2:hover {
+    color: var(--accent-violet);
 }
 
 code {
@@ -93,4 +126,9 @@ code {
 
 .color_sec {
     color: var(--secondary-color);
+    transition: color 0.3s ease;
+}
+
+.color_sec:hover {
+    color: var(--accent-gold);
 }

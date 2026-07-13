@@ -5,6 +5,14 @@
     background-color: var(--bg-color);
     border-radius: 0 !important;
     border: 1px solid var(--secondary-color);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* NEW: inputs glow teal on hover/focus instead of staying flat white/black */
+.contact__form .form-control:hover,
+.contact__form .form-control:focus {
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 0 1px var(--accent-teal);
 }
 
 .contact__form input.form-control {
@@ -12,8 +20,9 @@
     height: calc(2.5em + .75rem + 2px);
 }
 
+/* CHANGED: send button turns coral on hover */
 button.btn.ac_btn:hover {
-    color: var(--secondary-color);
+    color: var(--accent-coral);
 }
 
 .loading-bar {
